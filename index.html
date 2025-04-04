@@ -3,62 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to VSNU</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>VSNU - Enter the Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Orbitron', sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #1f1c2c, #928dab);
-            color: white;
+            background: black;
+            color: cyan;
             text-align: center;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding: 20px;
+            overflow: hidden;
+            position: relative;
         }
         h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            animation: fadeIn 1.5s ease-in-out;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px cyan;
+            animation: glow 1.5s infinite alternate;
         }
         p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            opacity: 0.9;
             margin-top: 10px;
-            opacity: 0.8;
-            animation: fadeIn 2s ease-in-out;
+            text-shadow: 0 0 15px cyan;
         }
         .btn {
             margin-top: 20px;
             padding: 12px 24px;
             font-size: 1rem;
-            color: white;
-            background: #ff6f61;
+            color: black;
+            background: cyan;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
             text-decoration: none;
-            display: inline-block;
+            font-weight: bold;
         }
         .btn:hover {
-            background: #ff3b2f;
+            background: white;
+            color: black;
+            transform: scale(1.1);
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-10px); }
-            100% { opacity: 1; transform: translateY(0); }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px cyan; }
+            100% { text-shadow: 0 0 30px cyan; }
         }
+        /* Background Animation */
+        .circles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .circles div {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: cyan;
+            opacity: 0.3;
+            border-radius: 50%;
+            animation: move 20s linear infinite;
+        }
+        @keyframes move {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-100vh); }
+        }
+        .circles div:nth-child(1) { left: 5%; width: 40px; height: 40px; animation-duration: 10s; }
+        .circles div:nth-child(2) { left: 25%; width: 30px; height: 30px; animation-duration: 15s; }
+        .circles div:nth-child(3) { left: 50%; width: 20px; height: 20px; animation-duration: 8s; }
+        .circles div:nth-child(4) { left: 75%; width: 50px; height: 50px; animation-duration: 12s; }
+        .circles div:nth-child(5) { left: 90%; width: 35px; height: 35px; animation-duration: 18s; }
     </style>
 </head>
 <body>
     <h1>Welcome to VSNU 🚀</h1>
-    <p>Your gateway to something amazing.</p>
-    <a href="https://github.com/vsnu4git" class="btn">Visit My GitHub</a>
+    <p>The future is now. Are you ready?</p>
+    <a href="https://github.com/vsnu4git" class="btn">Enter</a>
+    
+    <div class="circles">
+        <div></div><div></div><div></div><div></div><div></div>
+    </div>
 </body>
 </html>
