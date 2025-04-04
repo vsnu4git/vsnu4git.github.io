@@ -3,10 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VSNU</title>
+    <title>Welcome to VSNU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0.8;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            color: white;
+            background: #ff6f61;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #ff3b2f;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to VSNU!</h1>
-    <p>This is my GitHub Pages site.</p>
+    <h1>Welcome to VSNU 🚀</h1>
+    <p>Your gateway to something amazing.</p>
+    <a href="https://github.com/vsnu4git" class="btn">Visit My GitHub</a>
 </body>
 </html>
