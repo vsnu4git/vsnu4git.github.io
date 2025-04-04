@@ -4,54 +4,26 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let particles = [];
+let gradientOffset = 0;
 
-class Particle {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 5 + 1;
-        this.speedX = Math.random() * 3 - 1.5;
-        this.speedY = Math.random() * 3 - 1.5;
-    }
-
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x <= 0 || this.x >= canvas.width) this.speedX *= -1;
-        if (this.y <= 0 || this.y >= canvas.height) this.speedY *= -1;
-    }
-
-    draw() {
-        ctx.fillStyle = "cyan";
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
-    }
-}
-
-function initParticles() {
-    particles = [];
-    for (let i = 0; i < 100; i++) {
-        particles.push(new Particle());
-    }
+function drawBackground() {
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, `hsl(${gradientOffset % 360}, 100%, 50%)`);
+    gradient.addColorStop(1, `hsl(${(gradientOffset + 60) % 360}, 100%, 50%)`);
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-        p.update();
-        p.draw();
-    });
+    gradientOffset += 0.5;
+    drawBackground();
     requestAnimationFrame(animate);
 }
 
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    initParticles();
 });
 
-initParticles();
 animate();
