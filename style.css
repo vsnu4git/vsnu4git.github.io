@@ -1,62 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
 body {
-    background: black;
-    color: cyan;
+    background: #121212;
+    color: #fff;
     text-align: center;
     overflow: hidden;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: cyan;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    position: relative;
 }
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1.5s ease-in-out;
 }
-.container {
-    z-index: 2;
-    text-align: center;
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
-h1 {
-    font-size: 4rem;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px cyan;
-    animation: glow 1.5s infinite alternate;
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
 }
-p {
-    font-size: 1.3rem;
-    opacity: 0.9;
-    margin-top: 10px;
-    text-shadow: 0 0 15px cyan;
-}
+
 .btn {
     margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 1rem;
-    color: black;
+    padding: 10px 25px;
     background: cyan;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+    color: #121212;
+    font-size: 1rem;
+    border-radius: 5px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: 0.3s;
 }
+
 .btn:hover {
     background: white;
     color: black;
-    transform: scale(1.1);
 }
-@keyframes glow {
-    0% { text-shadow: 0 0 10px cyan; }
-    100% { text-shadow: 0 0 30px cyan; }
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
