@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+body {
+    background: black;
+    color: cyan;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.container {
+    z-index: 2;
+    text-align: center;
+}
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px cyan;
+    animation: glow 1.5s infinite alternate;
+}
+p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-top: 10px;
+    text-shadow: 0 0 15px cyan;
+}
+.btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: black;
+    background: cyan;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+@keyframes glow {
+    0% { text-shadow: 0 0 10px cyan; }
+    100% { text-shadow: 0 0 30px cyan; }
+}
