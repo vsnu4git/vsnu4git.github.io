@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Coming soon!</title>
+    <title>Coming Soon</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -60,16 +60,23 @@
 <body>
     <div class="background" id="background"></div>
     <div class="container">
-        <h1></h1>
+        <h1>vsnu</h1>
         <div class="countdown" id="countdown"></div>
     </div>
     <script>
         function countdown() {
-            let timeLeft = 20 * 24 * 60 * 60;
+            let now = Math.floor(Date.now() / 1000);
+            let endTime = localStorage.getItem("countdownEnd");
+            if (!endTime) {
+                endTime = now + (20 * 24 * 60 * 60);
+                localStorage.setItem("countdownEnd", endTime);
+            }
             setInterval(() => {
+                let timeLeft = endTime - Math.floor(Date.now() / 1000);
                 if (timeLeft >= 0) {
                     document.getElementById("countdown").innerHTML = `${timeLeft} seconds`;
-                    timeLeft--;
+                } else {
+                    document.getElementById("countdown").innerHTML = "Time's up!";
                 }
             }, 1000);
         }
