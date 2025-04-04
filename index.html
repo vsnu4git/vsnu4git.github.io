@@ -4,97 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VSNU - Enter the Future</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Orbitron', sans-serif;
-        }
-        body {
-            background: black;
-            color: cyan;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-        }
-        h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            text-shadow: 0 0 20px cyan;
-            animation: glow 1.5s infinite alternate;
-        }
-        p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            margin-top: 10px;
-            text-shadow: 0 0 15px cyan;
-        }
-        .btn {
-            margin-top: 20px;
-            padding: 12px 24px;
-            font-size: 1rem;
-            color: black;
-            background: cyan;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background: white;
-            color: black;
-            transform: scale(1.1);
-        }
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px cyan; }
-            100% { text-shadow: 0 0 30px cyan; }
-        }
-        /* Background Animation */
-        .circles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        .circles div {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: cyan;
-            opacity: 0.3;
-            border-radius: 50%;
-            animation: move 20s linear infinite;
-        }
-        @keyframes move {
-            from { transform: translateY(100vh); }
-            to { transform: translateY(-100vh); }
-        }
-        .circles div:nth-child(1) { left: 5%; width: 40px; height: 40px; animation-duration: 10s; }
-        .circles div:nth-child(2) { left: 25%; width: 30px; height: 30px; animation-duration: 15s; }
-        .circles div:nth-child(3) { left: 50%; width: 20px; height: 20px; animation-duration: 8s; }
-        .circles div:nth-child(4) { left: 75%; width: 50px; height: 50px; animation-duration: 12s; }
-        .circles div:nth-child(5) { left: 90%; width: 35px; height: 35px; animation-duration: 18s; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to VSNU 🚀</h1>
-    <p>The future is now. Are you ready?</p>
-    <a href="https://github.com/vsnu4git" class="btn">Enter</a>
-    
-    <div class="circles">
-        <div></div><div></div><div></div><div></div><div></div>
+    <canvas id="background"></canvas>
+
+    <div class="container">
+        <h1 id="title">Welcome to VSNU</h1>
+        <p>The future is now. Are you ready?</p>
+        <a href="https://github.com/vsnu4git" class="btn">Enter</a>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
